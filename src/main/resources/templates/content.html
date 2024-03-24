@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0" th:each="app : ${applications}">
+        <div class="card">
+            <div class="card-body">
+                <input type="hidden" name="id" th:value="${app.id}">
+                <h5 class="card-title">
+                    Заявка от <span th:text="${app.username}"></span>
+                </h5>
+                <p class="card-text">
+                    Курс: <span th:text="${app.coursename}"></span>
+                </p>
+                <p class="card-text" th:text="${app.commentary}"></p>
+                <p class="card-text">
+                    <span class="text-muted" style="font-weight: normal;">Телефон:</span>
+                    <span th:text="${app.phone}"></span>
+                </p>
+                <p class="card-text">
+                    <span th:text="'Обработано: '"></span>
+                    <span th:if="${app.handled}" class="text-success">Да</span>
+                    <span th:if="${!app.handled}" class="text-danger">Нет</span>
+                </p>
+                <a th:href="${'/application/' + app.getId()}" class="btn btn-primary">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</div>

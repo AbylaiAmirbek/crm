@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{header}">
+    <meta charset="UTF-8">
+    <title>Add Application</title>
+</head>
+<body>
+<div th:insert="~{navbar}"></div>
+<form action="/application/add" method="post">
+    <div class="mb-3">
+        <label for="nameField" class="form-label">ФИО:</label>
+        <input name="username" type="text" class="form-control" id="nameField">
+    </div>
+
+    <div class="mb-3">
+        <label for="cousrseField" class="form-label">Курс:</label>
+        <input name="coursename" type="text" class="form-control" id="cousrseField">
+    </div>
+
+    <div class="mb-3">
+        <label for="phoneField" class="form-label">Телефон:</label>
+        <input name="phone" type="text" class="form-control" id="phoneField">
+    </div>
+
+    <div class="form-floating">
+        <textarea name="commentary" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Комментарии:</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить заявку</button>
+</form>
+
+</body>
+</html>
